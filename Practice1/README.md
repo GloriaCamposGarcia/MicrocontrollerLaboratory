@@ -99,7 +99,7 @@ in forked repository.
 
 ### Demonstration
 Screenshot the image of the complete schematic and upload it at the repository.
-![Fig. 2](./ejercicio1.png)
+![Fig. 2](./ejericio1.png)
 
 ## Conclusion
 
