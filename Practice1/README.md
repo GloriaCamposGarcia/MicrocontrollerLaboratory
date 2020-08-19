@@ -102,5 +102,4 @@ Screenshot the image of the complete schematic and upload it at the repository.
 ![Fig. 2](./ejericio1.png)
 
 ## Conclusion
-
-In this section, you should add the conclusions, suggestions, and/or problems of the laboratory activities. Each team member must add his/her own conclusion (5 lines as minimum for each member).
+Creo que este tipo de actividades ayuda a la implementacion de los conocimientos, debido a que es una aplicacion nueva me costo trabajo en la identificacion de dos de los elementos, sin embargo creo que en general es de facil uso y manejo adecuado para los propositos. Aun no se como se haria la aplicacion por lo que me gustaria ahondar mas en como seria su implementacion en la vida real y conocer acerca de los problemas que pudieran presentarse, para asi poder preveerlos al querer en un futuro realizar estas practicas de manera presencial. No me marco ningun error en las conecciones ni alguna advertencia, pero creo que si no se tiene cuidado de los etiquetados podria haber alguno, por lo que creo que es indispensable tener un control de los labels que se ocuparan para cada cosa. 
