@@ -1,4 +1,4 @@
-# Microcontroller Laboratory
+# Microcontroller Laboratory :)
 
 
 ## Introduction
