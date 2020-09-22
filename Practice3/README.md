@@ -66,7 +66,9 @@ Commit and push the files with extensions .pro, .gbl, and .drl  created once you
 ### Demonstration
 Screenshot the image of the complete PBC board whith the attached electronic components using the 3d viewer of KiCad.
 ![Fig. 2](./practica3.png)
+
 ![Fig. 3](./practica3.2.png)
+
 ## Conclusion
 
-La vista que se proporciona es una vista 3d. en esta seccion hay la posibilidad de poder ver la tablilla como se veria con los componetes ensamblados para ver espacion y como vista predeterminada de como se deben conectar y como se verian todos los componentes ensamblados con las rutas ya marcadas y espacios predeterminados. Sin embargo debido a que no se tienen cargadas las librerias que permiten que los elementos tambien se vean en 3d, solo se ve la visualizacion 3d de la plantilla, sin embargo eso se poria modificar agregando las librerias para la visualizaciond e los elementeos. 
+La vista que se proporciona es una vista 3d. en esta seccion hay la posibilidad de poder ver la tablilla como se veria con los componetes ensamblados para ver espacion y como vista predeterminada de como se deben conectar y como se verian todos los componentes ensamblados con las rutas ya marcadas y espacios predeterminados. Sin embargo debido a que no se tienen cargadas las librerias que permiten que los elementos tambien se vean en 3d, solo se ve la visualizacion 3d de la plantilla, sin embargo eso se poria modificar agregando las librerias para la visualizaciond e los elementeos. La primera de la practica es esencial debido a que si no se checa sobre los errores podrian haber errores que no son visibles para nosotros y se generaria la tablilla con errores que al momento de querer ser utilizado no podriamos usar eficientemente .
