@@ -94,7 +94,7 @@ Commit and push the files with extensions .pro and .kicad_pcb created once you c
 
 ### Demonstration
 Screenshot the image of the complete schematic and upload it at the repository.
-![Layout](.practica2.png)
+!(.practica2.png)
 ## Conclusion
 
 La parte de los footprimts fue la parte mas complicada debido a que no me identificaba las librerias y la parte de las capas al momento de hacer la conexion se pudo ver la importancia al final al ver el esquematico completo, creo que hace falta alguna herrameinta para hacer el margen y no solo poder poner dimensiones ya que lo hace mas impreciso y tedioso, fuera de eso las conexciones estan muy bien identificada para hacer la union entrre todos los componentes. Sin embargo una modificacion extra que tuve que realizar fue la modificacion del tamaño de la hoja ya que me quedaban los tamaños y elementos muy justos pra la realizacion del margen con el tamaño de hoja anterior o se sobreponian ciertos elementos haciendo la colocacion mas complicada. 
