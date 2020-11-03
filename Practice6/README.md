@@ -84,11 +84,62 @@ For this practice, add to the Result Section the following:
     - description of the problems found and solutions.
 
 ### File uploads
-Commit and push the file main.c created once you completed all the steps of the document in the repository.
+#include "device_config.h"
+#include "practice6.h"
+#include <math.h>
+enum exponent {
+    bbase=2,
+    limit=8
+};
+void portInit(void) {
+/**    
+    TRISDBbits.TRISB0 = 1;
+    TRISDbits.TRISB1 = 1;
+    TRISDbits.TRISB2 = 1;
+    TRISDbits.TRISB3 = 1;
+    TRISDbits.TRISB4 = 1;
+    TRISDbits.TRISB5 = 1;
+    TRISDbits.TRISB6 = 1;
+    TRISDbits.TRISB7 = 1;
+ **/
+    ANSELB = 0;
+    ANSELD = 0;
+    TRISD = 255; // 11111111b - 0xFF
+      
+}
 
-### Demonstration
-Record a video of the practice’s functionality and upload it on youtube. The video must contain a short explanation.
+void larsonDisplay(void){
+    LATB = 1;
+    for(unsigned char i = 0; i < limit; i++){
+        LATB = LATB << 1;
+        __delay_ms(DELAY_SWEEP);
+    }
+    for(unsigned char i = limit -1; i >=0 ; i--){
+        LATB = LATB >> 1;
+        __delay_ms(DELAY_SWEEP);
+    }
+}
+
+void main(void) {
+    portInit();
+    while(1){
+        LATB = 0;
+        unsigned char random = rand() % limit;
+        LATB |= (1 << random);
+        __delay_ms(500);
+              
+        if(PORTB == ~(LATD)){
+            larsonDisplay();
+        } else{
+            __delay_ms(250);
+            //Obtener el estatus de los PushButton
+            if(PORTB == ~(LATD)){
+                larsonDisplay();
+            }
+        }
+    }
+    return;
+}
 
 ## Conclusion
-
-In this section, you should add the conclusions, suggestions, and/or problems of the laboratory activities. Each team member must add his/her own conclusion (5 lines as minimum for each member).
+El principal problema que se presento y por lo que la practica fue mas extensa en tiempo es que no sabiamos ocupar el programa, por lo tanto eso no queda entendido al cien porciento lo que retrasa mucho en tiempo y en el entendimiento de conceptos. Creo que para estas practicas se deberia poder tener un curso de como utilizar la plataforma para poder estar familiarizados con ella como se hizo al inicio del semestre con lo de los PCB, por otro lado, algunas de las practicas estan enfocadas en hacer la ocnexion fisica por lo que las instrcciones no estan muy bien detalladas para cuando se hace la simulacion. Y por ultimo la licencia de proteus se vencio por lo que se pararon muchas de las actividades y posteriormente se juntaron con los examenes. 
