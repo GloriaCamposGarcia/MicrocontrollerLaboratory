@@ -56,12 +56,53 @@ Para esta práctica, reporta un screeshot de la demostración de cada uno de los
 del problema principal, además de explicar la solución.
 
 ### File uploads
-En el repositorio de la práctica de github se adjuntará el código fuente (archivos .c) de cada uno de los problemas.
+#include <stdio.h>
+int find(int arreglo[],int size)
+{
+int ones = 0;
+int twos = 0;
+int not_threes = 0;
 
+for(int i = 0;i<size;i++)
+{
+    twos |=ones & arreglo[i];
+    ones ^=arreglo[i];
+    not_threes = ~(ones & twos);
+    ones &=not_threes;
+    twos &=not_threes;
+    
+}
+return ones;
+}
+
+int main()
+{
+   int arreglo[] = {10, 1, 10, 3, 10, 1, 1, 2, 3, 3};
+   int size = sizeof(arreglo) / sizeof(*arreglo);
+   printf("El valor unico es %d",find(arreglo,size));
+
+    return 0;
+}
+
+
+#include <stdio.h>
+Multiplicación
+int main()
+{
+    unsigned char a = 48;
+    unsigned char b = 3 ;
+    unsigned char vala = a;
+    a = a&b;
+    a = a|0x48;
+    unsigned char r = a <<1;
+    printf("la suma de %d x %d es = %d ",vala,b,r);
+
+    return 0;
+}
 
 ### Demonstration
-Se realizará un screenshoot de cada una de la resolución de cada uno de los problemas, además se grabará un video
-explicando la solución y ejecutandola para validar su comprobación.
+https://youtu.be/J-KDhDkSqGY
+https://youtu.be/b9R1caKo3cw
 
 ## Conclusion
-En esta sección, deberás añadir las conclusiones, sugerencias y/o problemas de las actividades de laboratorio. 
+Fue una actividad muy retadora, puesto que las operaciones con bits consideran muchos mas aspectos y tomando en cuenta que el nivel de dificultad era realmente alto para llevarlo a cabo por nuestra cuenta propia. A mi parecer estas son actividades que desde un inicio se deberian abordar en clase desde el planteamiento hasta la resolucion del mismo para poder tener una mejor compresion. 
