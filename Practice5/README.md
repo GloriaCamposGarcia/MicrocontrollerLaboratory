@@ -117,8 +117,11 @@ For this practice, add to the Result Section the following:
 Commit and push the file main.c created once you completed all the steps of the document in the repository.
 
 ### Demonstration
-Record a video of the practice’s functionality and upload it on youtube. The video must contain a short explanation.
+
+![Figure 6](./img/build_successful_window.png)
+https://youtu.be/D0ilvDsje3s
+
 
 ## Conclusion
 
-In this section, you should add the conclusions, suggestions, and/or problems of the laboratory activities. Each team member must add his/her own conclusion (5 lines as minimum for each member).
+El programa no era un programa con el que hubiera estado familiarizada, por lo tanto fue un poco dificil. El debug que se intento hacer a veces funcionaba y otras veces solo se quedaba en rojo, sin embaego al no conocer el programa o como solucionar esos problemas no sabia que hacer al momento en el que se presentaran. 
