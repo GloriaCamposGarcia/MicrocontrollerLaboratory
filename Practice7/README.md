@@ -99,10 +99,181 @@ For this practice, add to the Result Section the following:
     - flow diagram of your program implementation.
 
 ### File uploads
-Commit and push the file main.c created once you completed all the steps of the document in the repository.
+#include <xc.h>
+
+//OSCILLATOR SOURCE AND DIGITAL I/O CONFIGURATION BITS
+//====================================================
+#pragma config	FOSC = INTOSCIO_EC       //CONFIG1H (0-3) = 0010: INTIO2 oscillator, Internal oscillator block, port function on RA6 and RA7.
+//#pragma config	MCLRE = ON          // CONFIG3H.7 = 1: Pin de RESET habilitado y Entrada RE3 desactivado.
+#pragma config	PBADEN = OFF        // CONFIG3H.1 = 0: PORTB.0 -- PORTB.4 as Digital I/O.
+#pragma config	LVP = OFF           // CONFIG3H.2 = 0: Single-Supply ICSP disabled  so that PORTB.5 works as Digital I/O.
+
+//PICIT-3 DEBUGGER SETUP CONFIGURATION BITS
+//=========================================
+#pragma config	WDT = OFF           // CONFIG2H (0) = 0: Watchdog Timer Disabled.
+int count=0; 
+void columnYFila(void);
+void delay(void);
+void main(void){
+
+   //CLOCK FREQUENCY CONFIGURATION
+   //============================
+   OSCCON = 0x70;                       // 4 MHz internal oscillator
+
+   //DISABLE PORT's ANALOG FUNCTIONS
+   //===============================
+   CMCON = 0xFF;                        // Comparators OFF, to use PORT_Ds LSN
+   CVRCONbits.CVREN = 0;                // Comparator Voltge Reference Module OFF
+   ADCON1 = 0x0F; 
+   
+ 
+       PORTB=0;
+       LATB=0;
+       PORTD=0;
+       LATD=0;
+       
+       TRISB=0xF0;
+       TRISD=0x00;
+       
+       INTCON2bits.RBPU=0x00;
+       
+       while (1){
+           PORTB=0xF0;
+           if(PORTB<0xF0){
+               delay();
+               if(PORTB<0xF0){ //Preguntar si columna es menor que 0xF0
+                   columnYFila(); //Subrutina para encontrar Columna y fila 
+               }
+               
+           }else {
+               PORTB=0;
+           }
+           
+           
+       }
+       
+      
+       
+   }
+ void delay(void){
+           return;
+       }
+ void columnYFila(void){
+     if (PORTBbits.RB4==0){         //Columna 1
+         PORTB=0xFE;
+         if(PORTBbits.RB4==0){      //¿Fila 1 activa col 1?
+             PORTD=0x01;            //Desplegar valor 
+             return;                //Regresar a inicio 
+         }else{                                     
+             PORTB=0xFD;
+         }
+         if(PORTBbits.RB4==0){      //¿Fila 2 activa col 1?
+             PORTD=0x05;            //Desplegar valor 
+             return;                //Regresar a inicio 
+         }else {
+             PORTB=0xFB;
+         }
+         if(PORTBbits.RB4==0){      //¿Fila 3 activa col 1?
+             PORTD=0x09;            //Desplegar valor 
+             return;                //Regresar a inicio 
+         }else{
+             PORTB=0xF7;
+         }
+         if(PORTBbits.RB4==0){      //¿Fila 4 activa col 1?
+             PORTD=0x0D;            //Desplegar valor 
+             return;                //Regresar a inicio 
+         }else {
+             return;
+         }
+         //Logica de encontrar fila se repite solo que con diferente columna
+     }else if (PORTBbits.RB5==0){   //Columna 2
+         PORTB=0xFE;
+         if(PORTBbits.RB5==0){
+             PORTD=0x02;
+             return;
+         }else{
+             PORTB=0xFD;
+         }
+         if(PORTBbits.RB5==0){
+             PORTD=0x06;
+             return;
+         }else {
+             PORTB=0xFB;
+         }
+         if(PORTBbits.RB5==0){
+             PORTD=0x0A;
+             return;
+         }else{
+             PORTB=0xF7;
+         }
+         if(PORTBbits.RB5==0){
+             PORTD=0x0E;
+             return;
+         }else {
+             return;
+         }
+     }else if (PORTBbits.RB6==0){  //Columna 3
+         PORTB=0xFE;
+         if(PORTBbits.RB6==0){
+             PORTD=0x03;
+             return;
+         }else{
+             PORTB=0xFD;
+             
+         }
+         if(PORTBbits.RB6==0){
+             PORTD=0x07;
+             return;
+         }else {
+             PORTB=0xFB;
+         }
+         if(PORTBbits.RB6==0){
+             PORTD=0x0B;
+             return;
+         }else{
+             PORTB=0xF7;
+         }
+         if(PORTBbits.RB6==0){
+             PORTD=0x0F;
+             return;
+         }else {
+             return;
+         }
+     }else if (PORTBbits.RB7==0){  //Columna 4
+         PORTB=0xFE;
+         if(PORTBbits.RB7==0){
+             PORTD=0x04;
+             return;
+         }else{
+             PORTB=0xFD;
+         }
+         if(PORTBbits.RB7==0){
+             PORTD=0x08;
+             return;
+         }else {
+             PORTB=0xFB;
+         }
+         if(PORTBbits.RB7==0){
+             PORTD=0x0C;
+             return;
+         }else{
+             PORTB=0xF7;
+         }
+         if(PORTBbits.RB7==0){
+             PORTD=0x10;
+             return;
+         }else {
+             return;
+         }
+     }else {
+         return;
+     }
+           return;
+       }
 
 ### Demonstration
-Record a video of the practice’s functionality and upload it on youtube. The video must contain a short explanation.
+
+https://drive.google.com/file/d/1gZ8AgOkPirtTLBne9MKcYxjC_RrSU93U/view?usp=sharing
 
 ## Conclusion
 In this section, you should add the conclusions, suggestions, and/or problems of the laboratory activities. Each team member must add his/her own conclusion (5 lines as minimum for each member).
